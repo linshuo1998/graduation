@@ -36,7 +36,7 @@ public class RecruitmentServiceImpl implements RecruitmentService {
     }
 
     @Override
-    public Recruitment findByTitle(String t) {
+    public List<Recruitment> findByTitle(String t) {
         return recruimentDao.findByTitle(t);
     }
 }

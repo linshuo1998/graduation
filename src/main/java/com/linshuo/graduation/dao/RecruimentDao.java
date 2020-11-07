@@ -1,6 +1,6 @@
 package com.linshuo.graduation.dao;
 
-import com.linshuo.graduation.entity.Recruitment;
+import com.linshuo.graduation.entity.*;
 import com.mongodb.client.MongoCursor;
 import org.elasticsearch.search.suggest.SortBy;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,23 +20,26 @@ public class RecruimentDao {
     @Autowired
     private MongoTemplate mongoTemplate;
 
-//    创建对象
-    public void saveData(Recruitment data){
-        mongoTemplate.save(data);
-    }
+//    保存对象
+public void saveData(Recruitment data){
+    mongoTemplate.save(data);
+}
 
-//    查询所有
+
+    //    查询所有
     public List<Recruitment> findAll(){
         Query query = new Query();
         Sort sort = Sort.by(Sort.Direction.DESC,"publishTime");
         query.with(sort);
+
         return mongoTemplate.find(query,Recruitment.class);
 //        后期可以在saveData里加索引优化查询
 
     }
 
 //    根据标题查询对象
-    public Recruitment findByTitle(String title){
+    public List<Recruitment> findByTitle(String title){
+//        System.out.println("参数是"+title);
 
 //        Query query = new Query(Criteria.where("title").is(title));
 
@@ -45,7 +48,14 @@ public class RecruimentDao {
         Pattern pattern= Pattern.compile("^.*"+title+".*$", Pattern.CASE_INSENSITIVE);
         query.addCriteria(Criteria.where("title").regex(pattern));
 
-        return (Recruitment) mongoTemplate.find(query, Recruitment.class);
+        List<Recruitment> list = mongoTemplate.find(query,Recruitment.class);
+        for(int i = 0; i < list.size(); i++)
+        {
+            Recruitment r = (Recruitment) list.get(i);
+            System.out.println(r.getId()+"  "+r.getTitle()+"  ");
+
+        }
+        return mongoTemplate.find(query, Recruitment.class);
     }
 
 //   更新对象

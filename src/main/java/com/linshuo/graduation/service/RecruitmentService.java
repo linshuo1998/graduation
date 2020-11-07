@@ -14,5 +14,5 @@ public interface RecruitmentService {
 //    修改对象
     public void updateData(Recruitment r);
 //    查询对象
-    public Recruitment findByTitle(String t);
+    public List<Recruitment> findByTitle(String t);
 }

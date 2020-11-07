@@ -25,7 +25,7 @@ public class RecruitmentController {
     }
 //    根据标题模糊查询
     @GetMapping("/findByTitle")
-    public Recruitment findByTitle(String title){
+    public List<Recruitment> findByTitle(@RequestParam(value = "title") String title){
         return recruitmentService.findByTitle(title);
     }
 //    更新对象
