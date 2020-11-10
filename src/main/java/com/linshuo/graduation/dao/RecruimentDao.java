@@ -16,7 +16,7 @@ import java.util.List;
 import java.util.regex.Pattern;
 
 @Component
-public class RecruimentDao {
+public class RecruimentDao<Recruiment> {
     @Autowired
     private MongoTemplate mongoTemplate;
 
@@ -36,7 +36,16 @@ public void saveData(Recruitment data){
 //        后期可以在saveData里加索引优化查询
 
     }
-
+//    根据openid查询对象
+    public Recruitment findById(String id,String id_){
+        Query query = new Query(Criteria.where("userOpenId").is(id).and("id").is(id_));
+        return mongoTemplate.findOne(query,Recruitment.class);
+}
+    //    根据id查询对象
+    public Recruitment findById_(String id){
+        Query query = new Query(Criteria.where("id").is(id));
+        return mongoTemplate.findOne(query,Recruitment.class);
+    }
 //    根据标题查询对象
     public List<Recruitment> findByTitle(String title){
 //        System.out.println("参数是"+title);
@@ -61,10 +70,12 @@ public void saveData(Recruitment data){
 //   更新对象
     public void updateData(Recruitment data){
         Query query = new Query(Criteria.where("id").is(data.getId()));
-        Update update = new Update().set("title",data.getTitle()).set("wageDetail",data.getWage());
-//        返回第一条
-//        return mongoTemplate.updateFirst(query,update,RecruitmentInfo.class);
-//        返回所有
+        Update update = new Update().set("title",data.getTitle()).
+                set("wage",data.getWage()).set("tags",data.getTags()).set("avatar",data.getAvatar()).
+                set("name",data.getName()).set("time",data.getTime()).set("workDetail",data.getWorkDetail()).
+                set("need",data.getNeed()).set("phoneNumber",data.getPhoneNumber()).set("wxNumber",data.getWxNumber()).
+                set("point",data.getPoint()).set("address",data.getAddress()).set("addressDetail",data.getAddressDetail()).
+                set("userOpenId",data.getUserOpenId()).set("publishTime",data.getPublishTime());
         mongoTemplate.updateMulti(query, update, Recruitment.class);
     }
 
@@ -75,4 +86,12 @@ public void saveData(Recruitment data){
     }
 
 
+
+//    查询已发布
+    public List<Recruitment> findPublished(String id){
+    Query query = new Query(Criteria.where("userOpenId").is(id));
+    Sort sort = Sort.by(Sort.Direction.DESC,"publishTime");
+    query.with(sort);
+    return mongoTemplate.find(query, Recruitment.class);
+    }
 }

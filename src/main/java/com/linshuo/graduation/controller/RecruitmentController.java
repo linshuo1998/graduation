@@ -18,16 +18,23 @@ public class RecruitmentController {
 //        System.out.println("asdadqw1232321::::::::::"+recruitment.getPoint().getName().toString());
         recruitmentService.addData(recruitment);
     }
+
 //    查询所有
     @GetMapping("/findAll")
     public List<Recruitment> findAll(){
         return recruitmentService.findAll();
+    }
+//    根据openid查询
+    @GetMapping("/findById")
+    public Recruitment findById(@RequestParam(value = "id") String id,@RequestParam(value = "id_") String id_){
+        return recruitmentService.findById(id,id_);
     }
 //    根据标题模糊查询
     @GetMapping("/findByTitle")
     public List<Recruitment> findByTitle(@RequestParam(value = "title") String title){
         return recruitmentService.findByTitle(title);
     }
+
 //    更新对象
     @PostMapping("/updateData")
     public void updateData(@RequestBody Recruitment recruitment){
@@ -38,6 +45,17 @@ public class RecruitmentController {
     public void deleteData(@RequestParam(value = "id") String id){
         recruitmentService.deleteData(id);
         System.out.println("删除成功");
+    }
+
+
+
+
+
+
+//    获取已发布招聘信息
+    @GetMapping("/MyPublished")
+    public List<Recruitment> MyPublished(@RequestParam(value = "id")String id){
+        return recruitmentService.findPublished(id);
     }
 
 }

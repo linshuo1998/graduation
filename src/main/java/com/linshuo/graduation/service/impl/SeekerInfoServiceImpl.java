@@ -142,7 +142,10 @@ public class SeekerInfoServiceImpl implements SeekerInfoService {
 
 //    查所有
     @Override
-    public List<Recruitment> findAll() {
-        return null;
+    public List<SelfEvaluation> findAll() {
+        return seekerInfoDao.findAll();
     }
+
+
+
 }

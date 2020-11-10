@@ -49,19 +49,19 @@ public class SeekerInfoDao {
     public EduExpInfo findEduExpInfo(String id) {
         Query query = new Query();
         query.addCriteria(Criteria.where("openId").is(id));
-        return (EduExpInfo) mongoTemplate.find(query, EduExpInfo.class);
+        return (EduExpInfo) mongoTemplate.findOne(query, EduExpInfo.class);
     }
 
     public CourseInfo findCourseInfo(String id) {
         Query query = new Query();
         query.addCriteria(Criteria.where("openId").is(id));
-        return (CourseInfo) mongoTemplate.find(query, CourseInfo.class);
+        return (CourseInfo) mongoTemplate.findOne(query, CourseInfo.class);
     }
 
     public ActivityInfo findActivityInfo(String id) {
         Query query = new Query();
         query.addCriteria(Criteria.where("openId").is(id));
-        return (ActivityInfo) mongoTemplate.find(query, ActivityInfo.class);
+        return (ActivityInfo) mongoTemplate.findOne(query, ActivityInfo.class);
     }
 
     public SelfEvaluation findSelfEvaluation(String id) {
@@ -167,14 +167,9 @@ public class SeekerInfoDao {
 //}
 
 
-    //查询所有(简介)
-    public List<Recruitment> findAll() {
-        Query query = new Query();
-        Sort sort = Sort.by(Sort.Direction.DESC, "publishTime");
-        query.with(sort);
-
-        return mongoTemplate.find(query, Recruitment.class);
-//        后期可以在saveData里加索引优化查询
+    //查询所有(生成名片信息)
+    public List<SelfEvaluation> findAll() {
+        return mongoTemplate.findAll(SelfEvaluation.class);
 
     }
 }

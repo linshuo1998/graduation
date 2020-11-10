@@ -17,6 +17,8 @@ public class Recruitment {
     private Point point;
     private String address;
     private String addressDetail;
+    private String userOpenId;
+    private String publishTime;
 
     public String getUserOpenId() {
         return userOpenId;
@@ -26,7 +28,7 @@ public class Recruitment {
         this.userOpenId = userOpenId;
     }
 
-    private String userOpenId;
+
 
     public String getPublishTime() {
         return publishTime;
@@ -36,7 +38,7 @@ public class Recruitment {
         this.publishTime = publishTime;
     }
 
-    private String publishTime;
+
 
     public String getAddress() {
         return address;

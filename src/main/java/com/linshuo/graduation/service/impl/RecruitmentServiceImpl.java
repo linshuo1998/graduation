@@ -34,9 +34,23 @@ public class RecruitmentServiceImpl implements RecruitmentService {
     public void updateData(Recruitment r) {
         recruimentDao.updateData(r);
     }
-
+    @Override
+    public Recruitment findById(String id,String id_) {
+        return recruimentDao.findById(id,id_);
+    }
     @Override
     public List<Recruitment> findByTitle(String t) {
         return recruimentDao.findByTitle(t);
+    }
+
+    @Override
+    public Recruitment findById_(String id) {
+        return recruimentDao.findById_(id);
+    }
+    //    查已发布
+
+    @Override
+    public List<Recruitment> findPublished(String t) {
+        return recruimentDao.findPublished(t);
     }
 }

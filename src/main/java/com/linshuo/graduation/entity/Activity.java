@@ -1,34 +1,33 @@
 package com.linshuo.graduation.entity;
 
-import java.util.Date;
 
 public class Activity {
-    private Date beginDate;
-    private Date endDate;
-    private String avtivity;
+    private String beginDate;
+    private String endDate;
+    private String activity;
 
 
-    public Date getBeginDate() {
+    public String getBeginDate() {
         return beginDate;
     }
 
-    public void setBeginDate(Date beginDate) {
+    public void setBeginDate(String beginDate) {
         this.beginDate = beginDate;
     }
 
-    public Date getEndDate() {
+    public String getEndDate() {
         return endDate;
     }
 
-    public void setEndDate(Date endDate) {
+    public void setEndDate(String endDate) {
         this.endDate = endDate;
     }
 
-    public String getAvtivity() {
-        return avtivity;
+    public String getActivity() {
+        return activity;
     }
 
-    public void setAvtivity(String avtivity) {
-        this.avtivity = avtivity;
+    public void setActivity(String activity) {
+        this.activity = activity;
     }
 }

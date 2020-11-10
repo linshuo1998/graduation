@@ -48,7 +48,7 @@ public interface SeekerInfoService {
 
 
     //    查询所有
-    public List<Recruitment> findAll();
+    public List<SelfEvaluation> findAll();
 
 
     //    删除对象
