@@ -21,8 +21,8 @@ public class SeekerInfoDao {
     public MainInfo findMainInfo(String id) {
         Query query = new Query();
         query.addCriteria(Criteria.where("openId").is(id));
-        System.out.println(mongoTemplate.findOne(query, MainInfo.class).getClass());
-        return (MainInfo) mongoTemplate.findOne(query, MainInfo.class);
+//        System.out.println(mongoTemplate.findOne(query, MainInfo.class).getClass());
+        return (MainInfo) mongoTemplate.findOne(query, MainInfo.class); 
     }
 
     public AwardInfo findAwardInfo(String id) {

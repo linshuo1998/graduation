@@ -172,7 +172,9 @@ public class SeekerInfoController {
         String selfEvaluation = selfEvaluations.get(i).getSelfEvaluation();
         result.put("id",id);
         result.put("MainInfo",mainInfo);
-        result.put("WorkExpInfo",workExpInfo.getWorkExps());
+
+        result.put("WorkExpInfo",workExpInfo);
+
         result.put("SelfEvaluation",selfEvaluation);
 
         results.put(id,result);

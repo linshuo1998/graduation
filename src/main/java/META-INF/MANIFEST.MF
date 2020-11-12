@@ -1,0 +1,59 @@
+Manifest-Version: 1.0
+Main-Class: com.linshuo.graduation.GraduationApplication
+Class-Path: elasticsearch-7.6.2.jar spring-expression-5.2.10.RELEASE.jar
+  spring-security-core-5.3.5.RELEASE.jar netty-resolver-4.1.53.Final.jar
+  spring-boot-starter-tomcat-2.3.5.RELEASE.jar spring-boot-starter-oauth
+ 2-resource-server-2.3.5.RELEASE.jar httpasyncclient-4.1.4.jar bson-4.0.
+ 5.jar spring-core-5.2.10.RELEASE.jar tomcat-embed-websocket-9.0.39.jar 
+ lucene-highlighter-8.4.0.jar jackson-dataformat-smile-2.11.3.jar lang-m
+ ustache-client-7.6.2.jar logback-core-1.2.3.jar nimbus-jose-jwt-8.19.ja
+ r lucene-core-8.4.0.jar tomcat-embed-core-9.0.39.jar spring-jdbc-5.2.10
+ .RELEASE.jar spring-data-keyvalue-2.3.5.RELEASE.jar spring-security-oau
+ th2-jose-5.3.5.RELEASE.jar httpcore-nio-4.4.13.jar spring-aop-5.2.10.RE
+ LEASE.jar jopt-simple-5.0.2.jar spring-boot-starter-data-mongodb-2.3.5.
+ RELEASE.jar elasticsearch-x-content-7.6.2.jar spring-boot-2.3.5.RELEASE
+ .jar elasticsearch-cli-7.6.2.jar spring-boot-starter-logging-2.3.5.RELE
+ ASE.jar spring-beans-5.2.10.RELEASE.jar asm-5.0.4.jar jackson-dataforma
+ t-yaml-2.11.3.jar lucene-backward-codecs-8.4.0.jar parent-join-client-7
+ .6.2.jar spring-oxm-5.2.10.RELEASE.jar lucene-spatial-extras-8.4.0.jar 
+ HikariCP-3.4.5.jar mybatis-spring-boot-autoconfigure-2.1.3.jar lucene-g
+ rouping-8.4.0.jar elasticsearch-geo-7.6.2.jar spring-boot-starter-data-
+ redis-2.3.5.RELEASE.jar jackson-datatype-jdk8-2.11.3.jar spring-data-el
+ asticsearch-4.0.5.RELEASE.jar json-smart-2.3.jar netty-transport-4.1.53
+ .Final.jar jakarta.annotation-api-1.3.5.jar netty-buffer-4.1.53.Final.j
+ ar lucene-sandbox-8.4.0.jar log4j-api-2.13.3.jar logback-classic-1.2.3.
+ jar spring-context-5.2.10.RELEASE.jar spring-boot-starter-data-mongodb-
+ reactive-2.3.5.RELEASE.jar t-digest-3.2.jar mybatis-3.5.5.jar jackson-d
+ atabind-2.11.3.jar lucene-join-8.4.0.jar mybatis-spring-boot-starter-2.
+ 1.3.jar commons-codec-1.14.jar spring-security-oauth2-resource-server-5
+ .3.5.RELEASE.jar hppc-0.8.1.jar spring-security-oauth2-core-5.3.5.RELEA
+ SE.jar spring-jcl-5.2.10.RELEASE.jar rank-eval-client-7.6.2.jar lucene-
+ spatial-8.4.0.jar lucene-analyzers-common-8.4.0.jar mongodb-driver-reac
+ tivestreams-4.0.5.jar jna-4.5.1.jar mongodb-driver-sync-4.0.5.jar lettu
+ ce-core-5.3.5.RELEASE.jar spring-boot-starter-2.3.5.RELEASE.jar mongodb
+ -driver-core-4.0.5.jar lucene-suggest-8.4.0.jar slf4j-api-1.7.30.jar ja
+ ckson-dataformat-cbor-2.11.3.jar snakeyaml-1.26.jar jackson-datatype-js
+ r310-2.11.3.jar httpclient-4.5.13.jar lucene-spatial3d-8.4.0.jar lucene
+ -misc-8.4.0.jar jackson-module-parameter-names-2.11.3.jar spring-data-j
+ dbc-2.0.5.RELEASE.jar spring-data-commons-2.3.5.RELEASE.jar spring-boot
+ -starter-data-elasticsearch-2.3.5.RELEASE.jar jackson-annotations-2.11.
+ 3.jar spring-web-5.2.10.RELEASE.jar jackson-core-2.11.3.jar spring-webm
+ vc-5.2.10.RELEASE.jar spring-security-config-5.3.5.RELEASE.jar spring-b
+ oot-starter-json-2.3.5.RELEASE.jar spring-boot-starter-data-jdbc-2.3.5.
+ RELEASE.jar elasticsearch-rest-high-level-client-7.6.2.jar netty-common
+ -4.1.53.Final.jar mapper-extras-client-7.6.2.jar spring-security-web-5.
+ 3.5.RELEASE.jar mybatis-spring-2.0.5.jar jcip-annotations-1.0-1.jar jod
+ a-time-2.10.4.jar elasticsearch-secure-sm-7.6.2.jar spring-data-redis-2
+ .3.5.RELEASE.jar netty-codec-http-4.1.53.Final.jar lucene-memory-8.4.0.
+ jar accessors-smart-1.2.jar netty-handler-4.1.53.Final.jar elasticsearc
+ h-core-7.6.2.jar aggs-matrix-stats-client-7.6.2.jar httpcore-4.4.13.jar
+  spring-context-support-5.2.10.RELEASE.jar spring-boot-starter-jdbc-2.3
+ .5.RELEASE.jar compiler-0.9.6.jar spring-tx-5.2.10.RELEASE.jar netty-co
+ dec-4.1.53.Final.jar reactive-streams-1.0.3.jar elasticsearch-rest-clie
+ nt-7.6.2.jar jakarta.el-3.0.3.jar HdrHistogram-2.1.9.jar log4j-to-slf4j
+ -2.13.3.jar spring-boot-autoconfigure-2.3.5.RELEASE.jar lucene-queries-
+ 8.4.0.jar reactor-core-3.3.11.RELEASE.jar spring-data-relational-2.0.5.
+ RELEASE.jar spring-data-mongodb-3.0.5.RELEASE.jar transport-netty4-clie
+ nt-7.6.2.jar spring-boot-starter-web-2.3.5.RELEASE.jar jul-to-slf4j-1.7
+ .30.jar lucene-queryparser-8.4.0.jar
+
