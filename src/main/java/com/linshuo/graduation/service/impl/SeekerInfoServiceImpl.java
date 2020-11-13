@@ -147,5 +147,10 @@ public class SeekerInfoServiceImpl implements SeekerInfoService {
     }
 
 
+//搜索
 
+    @Override
+    public List<MainInfo> searchSeeker(String words) {
+        return seekerInfoDao.searchSeeker(words);
+    }
 }

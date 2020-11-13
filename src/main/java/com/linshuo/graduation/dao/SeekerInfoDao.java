@@ -172,4 +172,20 @@ public class SeekerInfoDao {
         return mongoTemplate.findAll(SelfEvaluation.class);
 
     }
+
+//    搜索
+    public List<MainInfo> searchSeeker(String words){
+        Query query = new Query();
+        Pattern pattern= Pattern.compile("^.*"+words+".*$", Pattern.CASE_INSENSITIVE);
+        Criteria criteria = new Criteria();
+        criteria.orOperator(
+                Criteria.where("name").regex(pattern), //姓名模糊查询
+                Criteria.where("gender").regex(pattern),//性别查询
+                Criteria.where("major").regex(pattern),   //专业模糊查询
+                Criteria.where("sno").regex(pattern)//学号模糊查询
+
+        );
+        query.addCriteria(criteria);
+        return mongoTemplate.find(query, MainInfo.class);
+    }
 }

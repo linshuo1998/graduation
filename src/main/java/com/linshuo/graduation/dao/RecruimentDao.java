@@ -94,4 +94,20 @@ public void saveData(Recruitment data){
     query.with(sort);
     return mongoTemplate.find(query, Recruitment.class);
     }
+//    搜索
+    public List<Recruitment> searchRecruitment(String words){
+        Query query = new Query();
+        Pattern pattern= Pattern.compile("^.*"+words+".*$", Pattern.CASE_INSENSITIVE);
+        Criteria criteria = new Criteria();
+        criteria.orOperator(
+                Criteria.where("title").regex(pattern), //标题模糊查询
+                Criteria.where("address").regex(pattern),//地点模糊查询
+                Criteria.where("tags").regex(pattern),   //标签匹配
+                Criteria.where("addressDetail").regex(pattern),//详情地址查询
+                Criteria.where("wage").regex((pattern)) //薪酬模糊查询
+                );
+        query.addCriteria(criteria);
+        return mongoTemplate.find(query, Recruitment.class);
+
+    }
 }

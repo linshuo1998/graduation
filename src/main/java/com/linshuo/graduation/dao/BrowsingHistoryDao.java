@@ -2,6 +2,7 @@ package com.linshuo.graduation.dao;
 
 import com.linshuo.graduation.entity.*;
 import com.linshuo.graduation.service.RecruitmentService;
+import com.linshuo.graduation.service.SeekerCardService;
 import com.linshuo.graduation.service.SeekerInfoService;
 import net.minidev.json.JSONArray;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,7 +25,7 @@ public class BrowsingHistoryDao {
     @Autowired
     private RecruitmentService recruitmentService;
     @Autowired
-    private SeekerInfoService seekerInfoService;
+    private SeekerCardService seekerCardService;
 
     //    保存对象
     public void saveData(BrowsingHistory data){
@@ -41,20 +42,32 @@ public class BrowsingHistoryDao {
         Map<String,Object> results =new HashMap<String, Object>();
 
         if(type.equals("SeekerInfo")){
+//            for(int i=0;i<browsingHistories.size();i++){
+//                String tarId = browsingHistories.get(i).getTarId();
+//                Map<String,Object> result =new HashMap<String, Object>();
+//                Map<String,Object> result_ = new HashMap<String, Object>();
+//                MainInfo mainInfo = seekerInfoService.findMainInfo(tarId);
+//                WorkExpInfo workExpInfo = seekerInfoService.findWorkExpInfo(tarId);
+//                String selfEvaluation = seekerInfoService.findSelfEvaluation(tarId).getSelfEvaluation();
+//                String openId_ = mainInfo.getOpenId();
+//                result_.put("id",openId_);
+//                result_.put("MainInfo",mainInfo);
+//                result_.put("WorkExpInfo",workExpInfo.getWorkExps());
+//                result_.put("SelfEvaluation",selfEvaluation);
+//
+//                result.put("result",result_);
+//                result.put("visitNum",browsingHistories.get(i).getVisitNum());
+//                result.put("lastVisitTime",browsingHistories.get(i).getLastVisitTime());
+//
+//                String index = String.valueOf(i);
+//                results.put(index,result);
+
+//            }
             for(int i=0;i<browsingHistories.size();i++){
                 String tarId = browsingHistories.get(i).getTarId();
+                SeekerInfo seekerInfo = seekerCardService.findById(tarId);
                 Map<String,Object> result =new HashMap<String, Object>();
-                Map<String,Object> result_ = new HashMap<String, Object>();
-                MainInfo mainInfo = seekerInfoService.findMainInfo(tarId);
-                WorkExpInfo workExpInfo = seekerInfoService.findWorkExpInfo(tarId);
-                String selfEvaluation = seekerInfoService.findSelfEvaluation(tarId).getSelfEvaluation();
-                String openId_ = mainInfo.getOpenId();
-                result_.put("id",openId_);
-                result_.put("MainInfo",mainInfo);
-                result_.put("WorkExpInfo",workExpInfo.getWorkExps());
-                result_.put("SelfEvaluation",selfEvaluation);
-
-                result.put("result",result_);
+                result.put("SeekerInfo",seekerInfo);
                 result.put("visitNum",browsingHistories.get(i).getVisitNum());
                 result.put("lastVisitTime",browsingHistories.get(i).getLastVisitTime());
 

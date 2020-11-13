@@ -48,9 +48,14 @@ public class RecruitmentServiceImpl implements RecruitmentService {
         return recruimentDao.findById_(id);
     }
     //    查已发布
-
     @Override
     public List<Recruitment> findPublished(String t) {
         return recruimentDao.findPublished(t);
+    }
+//    搜索
+
+    @Override
+    public List<Recruitment> searchRecruitment(String words) {
+        return recruimentDao.searchRecruitment(words);
     }
 }

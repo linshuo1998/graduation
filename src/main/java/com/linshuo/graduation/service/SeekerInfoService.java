@@ -53,4 +53,7 @@ public interface SeekerInfoService {
 
     //    删除对象
 //    public void deleteData(String id);
+
+//    搜索
+    public List<MainInfo> searchSeeker(String words);
 }

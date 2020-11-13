@@ -21,4 +21,7 @@ public interface RecruitmentService {
 
 //    查询已发布信息
     public List<Recruitment> findPublished(String t);
+
+//    搜索对象
+    public List<Recruitment> searchRecruitment(String words);
 }
