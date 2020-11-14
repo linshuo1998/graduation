@@ -5,22 +5,23 @@ import java.util.List;
 
 public class SeekerInfo {
     private String openId;
-    //mainInfo
-    private MainInfo mainInfo;
-    //selfEvaluation
-    private String selfEvaluation;
-//    //awards
-//    private List<Award> awards;
-//    //skills
-//    private List<Skill> skills;
-    //workExps
     private List<WorkExp> workExps;
-//    //eduExps
-//    private List<EduExp> eduExps;
-//    //courses
-//    private List<Course> courses;
-//    //activities
-//    private List<Activity> activities;
+    private String selfEvaluation;
+    private String name;
+    private String sno;
+    private String major;
+    private String gender;
+    private String wxNumber;
+    private String phoneNumber;
+    private String avatar;
+
+    public String getAvatar() {
+        return avatar;
+    }
+
+    public void setAvatar(String avatar) {
+        this.avatar = avatar;
+    }
 
     public String getOpenId() {
         return openId;
@@ -30,12 +31,12 @@ public class SeekerInfo {
         this.openId = openId;
     }
 
-    public MainInfo getMainInfo() {
-        return mainInfo;
+    public List<WorkExp> getWorkExps() {
+        return workExps;
     }
 
-    public void setMainInfo(MainInfo mainInfo) {
-        this.mainInfo = mainInfo;
+    public void setWorkExps(List<WorkExp> workExps) {
+        this.workExps = workExps;
     }
 
     public String getSelfEvaluation() {
@@ -46,51 +47,51 @@ public class SeekerInfo {
         this.selfEvaluation = selfEvaluation;
     }
 
-//    public List<Award> getAwards() {
-//        return awards;
-//    }
-//
-//    public void setAwards(List<Award> awards) {
-//        this.awards = awards;
-//    }
-//
-//    public List<Skill> getSkills() {
-//        return skills;
-//    }
-//
-//    public void setSkills(List<Skill> skills) {
-//        this.skills = skills;
-//    }
-//
-    public List<WorkExp> getWorkExps() {
-        return workExps;
+    public String getName() {
+        return name;
     }
 
-    public void setWorkExps(List<WorkExp> workExps) {
-        this.workExps = workExps;
+    public void setName(String name) {
+        this.name = name;
     }
-//
-//    public List<EduExp> getEduExps() {
-//        return eduExps;
-//    }
-//
-//    public void setEduExps(List<EduExp> eduExps) {
-//        this.eduExps = eduExps;
-//    }
-//
-//    public List<Course> getCourses() {
-//        return courses;
-//    }
-//
-//    public void setCourses(List<Course> courses) {
-//        this.courses = courses;
-//    }
-//
-//    public List<Activity> getActivities() {
-//        return activities;
-//    }
-//
-//    public void setActivities(List<Activity> activities) {
-//        this.activities = activities;
-//    }
+
+    public String getSno() {
+        return sno;
+    }
+
+    public void setSno(String sno) {
+        this.sno = sno;
+    }
+
+    public String getMajor() {
+        return major;
+    }
+
+    public void setMajor(String major) {
+        this.major = major;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public String getWxNumber() {
+        return wxNumber;
+    }
+
+    public void setWxNumber(String wxNumber) {
+        this.wxNumber = wxNumber;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
 }

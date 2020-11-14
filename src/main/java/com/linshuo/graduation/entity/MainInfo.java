@@ -1,12 +1,14 @@
 package com.linshuo.graduation.entity;
 
 
+import java.util.List;
+
 public class MainInfo {
     private String sno;
     private String name;
     private String gender;
     private String people;
-    private String nativePlace;
+    private List<String> nativePlace;
     private String birthday;
     private String major;
     private String health;
@@ -58,11 +60,11 @@ public class MainInfo {
         this.people = people;
     }
 
-    public String getNativePlace() {
+    public List<String> getNativePlace() {
         return nativePlace;
     }
 
-    public void setNativePlace(String nativePlace) {
+    public void setNativePlace(List<String> nativePlace) {
         this.nativePlace = nativePlace;
     }
 
