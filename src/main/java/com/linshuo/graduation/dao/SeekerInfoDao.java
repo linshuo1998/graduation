@@ -161,10 +161,38 @@ public class SeekerInfoDao {
     }
 
 //删除
-//public void deleteMainInfo(String id) {
-//    Query query = new Query(Criteria.where("openId").is(id));
-//    mongoTemplate.remove(query, MainInfo.class);
-//}
+    public void deleteMainInfo(String id) {
+        Query query = new Query(Criteria.where("openId").is(id));
+        mongoTemplate.remove(query, MainInfo.class);
+    }
+    public void deleteAwardInfo(String id) {
+        Query query = new Query(Criteria.where("openId").is(id));
+        mongoTemplate.remove(query, AwardInfo.class);
+    }
+    public void deleteSkillInfo(String id) {
+        Query query = new Query(Criteria.where("openId").is(id));
+        mongoTemplate.remove(query, SkillInfo.class);
+    }
+    public void deleteWorkExpInfo(String id) {
+        Query query = new Query(Criteria.where("openId").is(id));
+        mongoTemplate.remove(query, WorkExpInfo.class);
+    }
+    public void deleteEduExpInfo(String id) {
+        Query query = new Query(Criteria.where("openId").is(id));
+        mongoTemplate.remove(query, EduExpInfo.class);
+    }
+    public void deleteCourseInfo(String id) {
+        Query query = new Query(Criteria.where("openId").is(id));
+        mongoTemplate.remove(query, CourseInfo.class);
+    }
+    public void deleteActivityInfo(String id) {
+        Query query = new Query(Criteria.where("openId").is(id));
+        mongoTemplate.remove(query, ActivityInfo.class);
+    }
+    public void deleteSelfEvaluation(String id) {
+        Query query = new Query(Criteria.where("openId").is(id));
+        mongoTemplate.remove(query,SelfEvaluation.class);
+    }
 
 
     //查询所有(生成名片信息)

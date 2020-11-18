@@ -18,6 +18,16 @@ public class SeekerCardServiceImpl implements SeekerCardService {
     }
 
     @Override
+    public List<SeekerInfo> admin_findAll() {
+        return seekerCardDao.admin_findAll();
+    }
+
+    @Override
+    public void deleteData(String id) {
+        seekerCardDao.deleteData(id);
+    }
+
+    @Override
     public void addData(SeekerInfo r) {
         seekerCardDao.saveData(r);
     }
@@ -35,5 +45,10 @@ public class SeekerCardServiceImpl implements SeekerCardService {
     @Override
     public List<SeekerInfo> searchSeeker(String words) {
         return seekerCardDao.searchSeeker(words);
+    }
+
+    @Override
+    public List<SeekerInfo> admin_searchSeeker(String words) {
+        return seekerCardDao.admin_searchSeeker(words);
     }
 }

@@ -58,4 +58,14 @@ public class RecruitmentServiceImpl implements RecruitmentService {
     public List<Recruitment> searchRecruitment(String words) {
         return recruimentDao.searchRecruitment(words);
     }
+
+    @Override
+    public List<Recruitment> admin_searchRecruitment(String words) {
+        return recruimentDao.admin_searchRecruitment(words);
+    }
+
+    @Override
+    public List<Recruitment> admin_findAll() {
+        return recruimentDao.admin_findAll();
+    }
 }

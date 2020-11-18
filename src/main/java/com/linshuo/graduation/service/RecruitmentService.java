@@ -7,6 +7,7 @@ import java.util.List;
 public interface RecruitmentService {
 //    查询所有
     public List<Recruitment> findAll();
+    public List<Recruitment> admin_findAll();
 //    添加对象
     public void addData(Recruitment r);
 //    删除对象
@@ -24,4 +25,5 @@ public interface RecruitmentService {
 
 //    搜索对象
     public List<Recruitment> searchRecruitment(String words);
+    public List<Recruitment> admin_searchRecruitment(String words);
 }

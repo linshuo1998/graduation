@@ -14,6 +14,24 @@ public class SeekerInfo {
     private String wxNumber;
     private String phoneNumber;
     private String avatar;
+    private Boolean publishable;
+    private String publishTime;
+
+    public String getPublishTime() {
+        return publishTime;
+    }
+
+    public void setPublishTime(String publishTime) {
+        this.publishTime = publishTime;
+    }
+
+    public Boolean getPublishable() {
+        return publishable;
+    }
+
+    public void setPublishable(Boolean publishable) {
+        this.publishable = publishable;
+    }
 
     public String getAvatar() {
         return avatar;

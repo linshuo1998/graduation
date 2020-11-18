@@ -28,13 +28,19 @@ public void saveData(Recruitment data){
 
     //    查询所有
     public List<Recruitment> findAll(){
-        Query query = new Query();
+        Query query = new Query(Criteria.where("publishable").is(true));
         Sort sort = Sort.by(Sort.Direction.DESC,"publishTime");
         query.with(sort);
 
         return mongoTemplate.find(query,Recruitment.class);
 //        后期可以在saveData里加索引优化查询
 
+    }
+    public List<Recruitment> admin_findAll(){
+        Query query = new Query(Criteria.where("publishable").is(false));
+        Sort sort = Sort.by(Sort.Direction.DESC,"publishTime");
+        query.with(sort);
+        return mongoTemplate.find(query,Recruitment.class);
     }
 //    根据openid查询对象
     public Recruitment findById(String id,String id_){
@@ -75,7 +81,8 @@ public void saveData(Recruitment data){
                 set("name",data.getName()).set("time",data.getTime()).set("workDetail",data.getWorkDetail()).
                 set("need",data.getNeed()).set("phoneNumber",data.getPhoneNumber()).set("wxNumber",data.getWxNumber()).
                 set("point",data.getPoint()).set("address",data.getAddress()).set("addressDetail",data.getAddressDetail()).
-                set("userOpenId",data.getUserOpenId()).set("publishTime",data.getPublishTime());
+                set("userOpenId",data.getUserOpenId()).set("publishTime",data.getPublishTime()).
+                set("publishable",data.getPublishable());
         mongoTemplate.updateMulti(query, update, Recruitment.class);
     }
 
@@ -106,7 +113,29 @@ public void saveData(Recruitment data){
                 Criteria.where("addressDetail").regex(pattern),//详情地址查询
                 Criteria.where("wage").regex((pattern)) //薪酬模糊查询
                 );
+        criteria.andOperator(Criteria.where("publishable").is(true));
         query.addCriteria(criteria);
+        Sort sort = Sort.by(Sort.Direction.DESC,"publishTime");
+        query.with(sort);
+        return mongoTemplate.find(query, Recruitment.class);
+
+    }
+
+    public List<Recruitment> admin_searchRecruitment(String words){
+        Query query = new Query();
+        Pattern pattern= Pattern.compile("^.*"+words+".*$", Pattern.CASE_INSENSITIVE);
+        Criteria criteria = new Criteria();
+        criteria.orOperator(
+                Criteria.where("title").regex(pattern), //标题模糊查询
+                Criteria.where("address").regex(pattern),//地点模糊查询
+                Criteria.where("tags").regex(pattern),   //标签匹配
+                Criteria.where("addressDetail").regex(pattern),//详情地址查询
+                Criteria.where("wage").regex((pattern)) //薪酬模糊查询
+        );
+        criteria.andOperator(Criteria.where("publishable").is(false));
+        query.addCriteria(criteria);
+        Sort sort = Sort.by(Sort.Direction.DESC,"publishTime");
+        query.with(sort);
         return mongoTemplate.find(query, Recruitment.class);
 
     }

@@ -19,6 +19,15 @@ public class Recruitment {
     private String addressDetail;
     private String userOpenId;
     private String publishTime;
+    private Boolean publishable;
+
+    public Boolean getPublishable() {
+        return publishable;
+    }
+
+    public void setPublishable(Boolean publishable) {
+        this.publishable = publishable;
+    }
 
     public String getUserOpenId() {
         return userOpenId;

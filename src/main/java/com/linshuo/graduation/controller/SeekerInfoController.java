@@ -182,4 +182,11 @@ public class SeekerInfoController {
         System.out.println(results.toString());
         return results;
     }
+
+//    删除对象
+    @GetMapping("/deleteSeekerInfo")
+    public void deleteSeekerInfo(@RequestParam(value = "id") String id){
+        seekerInfoService.deleteData(id);
+    }
+
 }

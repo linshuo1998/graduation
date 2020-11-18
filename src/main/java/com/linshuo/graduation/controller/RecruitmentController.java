@@ -20,14 +20,26 @@ public class RecruitmentController {
     }
 
 //    查询所有
+    @GetMapping("/admin_findAll")
+    public List<Recruitment> admin_findAll(){
+        return recruitmentService.admin_findAll();
+    }
+
     @GetMapping("/findAll")
     public List<Recruitment> findAll(){
         return recruitmentService.findAll();
     }
+
 //    根据openid查询
     @GetMapping("/findById")
     public Recruitment findById(@RequestParam(value = "id") String id,@RequestParam(value = "id_") String id_){
         return recruitmentService.findById(id,id_);
+    }
+
+//    根据id查询
+    @GetMapping("/findById_")
+    public Recruitment findById_(@RequestParam(value = "id") String id){
+        return recruitmentService.findById_(id);
     }
 //    根据标题模糊查询
     @GetMapping("/findByTitle")

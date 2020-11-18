@@ -16,5 +16,9 @@ public interface SeekerCardService {
     public SeekerInfo findById(String id);
     //    搜索对象
     public List<SeekerInfo> searchSeeker(String words);
+    public List<SeekerInfo> admin_searchSeeker(String words);
 
+    public List<SeekerInfo> admin_findAll();
+//    删除对象
+    public void deleteData(String id);
 }

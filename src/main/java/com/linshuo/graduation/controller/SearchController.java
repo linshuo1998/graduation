@@ -29,6 +29,12 @@ public class SearchController {
 
     }
 
+    @GetMapping("/admin_searchRecruitment")
+    public List<Recruitment> admin_searchRecruitment(@RequestParam(value = "words") String words) {
+        return recruitmentService.admin_searchRecruitment(words);
+
+    }
+
 
 //    @GetMapping("/searchSeeker")
 //    public Map<String, Object> searchSeeker(@RequestParam(value = "words") String words) {

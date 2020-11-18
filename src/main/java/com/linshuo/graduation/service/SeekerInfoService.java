@@ -51,8 +51,8 @@ public interface SeekerInfoService {
     public List<SelfEvaluation> findAll();
 
 
-    //    删除对象
-//    public void deleteData(String id);
+      //  删除对象
+    public void deleteData(String id);
 
 //    搜索
     public List<MainInfo> searchSeeker(String words);

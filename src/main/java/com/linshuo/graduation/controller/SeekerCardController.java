@@ -16,6 +16,11 @@ public class SeekerCardController {
     public List<SeekerInfo> searchSeeker(@RequestParam(value = "words")String words){
         return seekerCardService.searchSeeker(words);
     }
+    @GetMapping("/admin_searchSeeker")
+    public List<SeekerInfo> admin_searchSeeker(@RequestParam(value = "words")String words){
+        return seekerCardService.admin_searchSeeker(words);
+    }
+
 
     @PostMapping("/saveCard")
     public void saveCard(@RequestBody SeekerInfo data){
@@ -27,12 +32,22 @@ public class SeekerCardController {
         seekerCardService.updateData(data);
     }
 
+    @GetMapping("/admin_findAllSeekerCard")
+    public List<SeekerInfo> admin_findAllSeekerCard(){
+        return seekerCardService.admin_findAll();
+    }
     @GetMapping("/findAllSeekerCard")
     public List<SeekerInfo> findAllSeekerCard(){
         return seekerCardService.findAll();
     }
+
     @GetMapping("findSeekerCardById")
     public SeekerInfo findSeekerCardById(@RequestParam(value = "id")String id){
         return seekerCardService.findById(id);
+    }
+
+    @GetMapping("/deleteSeekerCard")
+    public void deleteSeekerCard(@RequestParam(value = "id") String id){
+        seekerCardService.deleteData(id);
     }
 }

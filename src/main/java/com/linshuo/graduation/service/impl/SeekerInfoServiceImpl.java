@@ -151,6 +151,17 @@ public class SeekerInfoServiceImpl implements SeekerInfoService {
 
     @Override
     public List<MainInfo> searchSeeker(String words) {
-        return seekerInfoDao.searchSeeker(words);
+        return seekerInfoDao.searchSeeker(words); }
+//        删除
+    @Override
+    public void deleteData(String id) {
+        seekerInfoDao.deleteMainInfo(id);
+        seekerInfoDao.deleteSkillInfo(id);
+        seekerInfoDao.deleteAwardInfo(id);
+        seekerInfoDao.deleteEduExpInfo(id);
+        seekerInfoDao.deleteActivityInfo(id);
+        seekerInfoDao.deleteCourseInfo(id);
+        seekerInfoDao.deleteSelfEvaluation(id);
+        seekerInfoDao.deleteWorkExpInfo(id);
     }
 }
